@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:quote_app/views/screens/category_page/category_page.dart';
-import 'package:quote_app/views/screens/homepage/homepage.dart';
-import 'package:quote_app/views/screens/splash_page/splash_page.dart';
+import 'package:quote_app/header_file.dart';
 
 class Routes {
   static String splashscreen = '/';

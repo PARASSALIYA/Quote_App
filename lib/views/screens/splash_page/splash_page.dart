@@ -26,11 +26,24 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('lib/assets/image/bg.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Container(
-          height: 100,
-          width: 100,
-          color: Colors.black,
+          color: Colors.black.withOpacity(0.5),
+          child: Center(
+            child: Text(
+              "Quote App",
+              style: TextStyle(
+                fontSize: 40,
+                color: Colors.white,
+              ),
+            ),
+          ),
         ),
       ),
     );

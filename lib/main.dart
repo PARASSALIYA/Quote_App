@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:quote_app/utils/routes.dart';
+import 'header_file.dart';
 
 void main() {
   runApp(
