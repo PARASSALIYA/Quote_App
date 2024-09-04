@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quote_app/utils/model.dart';
 
 List<Map<String, dynamic>> allQuoteData = [
@@ -413,4 +414,35 @@ List<Color> color = [
   const Color(0xff4682B4),
   const Color(0xff00CED1),
   ...Colors.primaries
+];
+
+List<TextStyle> goodTextStyle = [
+  GoogleFonts.abel(),
+  GoogleFonts.roboto(),
+  GoogleFonts.dancingScript(),
+  GoogleFonts.bitter(),
+  GoogleFonts.anton(),
+  GoogleFonts.yatraOne(),
+  GoogleFonts.pacifico(),
+  GoogleFonts.fjallaOne(),
+  GoogleFonts.shadowsIntoLight(),
+  GoogleFonts.indieFlower(),
+  GoogleFonts.zillaSlab(),
+  GoogleFonts.satisfy(),
+  GoogleFonts.permanentMarker(),
+  GoogleFonts.amaticSc(),
+  GoogleFonts.cinzel(),
+  GoogleFonts.sairaCondensed(),
+  GoogleFonts.kalam(),
+  GoogleFonts.courgette(),
+  GoogleFonts.righteous(),
+  GoogleFonts.tinos(),
+  GoogleFonts.lobster(),
+  GoogleFonts.changa(),
+  GoogleFonts.greatVibes(),
+  GoogleFonts.zeyada(),
+  GoogleFonts.aladin(),
+  GoogleFonts.kaushanScript(),
+  GoogleFonts.pathwayGothicOne(),
+  GoogleFonts.sacramento()
 ];

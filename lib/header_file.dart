@@ -5,5 +5,4 @@ export 'package:quote_app/utils/quote.dart';
 export 'package:quote_app/utils/routes.dart';
 export 'package:quote_app/views/screens/homepage/homepage.dart';
 export 'package:quote_app/views/screens/splash_page/splash_page.dart';
-export 'package:quote_app/views/screens/category_page/category_page.dart';
 export 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
