@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:quote_app/utils/routes.dart';
+import 'package:quote_app/header_file.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -27,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('lib/assets/image/bg.jpg'),
             fit: BoxFit.cover,
@@ -35,7 +34,7 @@ class _SplashPageState extends State<SplashPage> {
         ),
         child: Container(
           color: Colors.black.withOpacity(0.5),
-          child: Center(
+          child: const Center(
             child: Text(
               "Quote App",
               style: TextStyle(

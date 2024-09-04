@@ -361,8 +361,7 @@ List<QuoteModel> allQuotes =
 
 List allCategories = allQuotes.map((e) => e.category).toSet().toList();
 
-//Color
-
+//Colors 49
 List<Color> color = [
   const Color(0xffD8BFD8),
   const Color(0xffE0FFFF),
@@ -413,36 +412,148 @@ List<Color> color = [
   const Color(0xff6495ED),
   const Color(0xff4682B4),
   const Color(0xff00CED1),
-  ...Colors.primaries
+];
+// Fonts 27
+List<Map<String, dynamic>> fontBg = [
+  {
+    'bg': 'lib/assets/image/bgimage/1.jpeg',
+    'font': GoogleFonts.abel(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/2.jpeg',
+    'font': GoogleFonts.roboto(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/3.jpg',
+    'font': GoogleFonts.dancingScript(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/4.jpeg',
+    'font': GoogleFonts.bitter(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/5.jpeg',
+    'font': GoogleFonts.anton(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/6.webp',
+    'font': GoogleFonts.yatraOne(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/7.jpeg',
+    'font': GoogleFonts.pacifico(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/8.webp',
+    'font': GoogleFonts.fjallaOne(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/9.jpeg',
+    'font': GoogleFonts.shadowsIntoLight(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/10.jpeg',
+    'font': GoogleFonts.indieFlower(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/11.jpeg',
+    'font': GoogleFonts.zillaSlab(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/12.webp',
+    'font': GoogleFonts.satisfy(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/13.jpg',
+    'font': GoogleFonts.permanentMarker(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/14.jpg',
+    'font': GoogleFonts.amaticSc(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/15.jpg',
+    'font': GoogleFonts.cinzel(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/16.jpg',
+    'font': GoogleFonts.sairaCondensed(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/17.jpg',
+    'font': GoogleFonts.kalam(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/18.jpg',
+    'font': GoogleFonts.courgette(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/19.jpg',
+    'font': GoogleFonts.righteous(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/20.jpg',
+    'font': GoogleFonts.tinos(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/21.jpg',
+    'font': GoogleFonts.lobster(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/22.jpg',
+    'font': GoogleFonts.changa(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/23.jpg',
+    'font': GoogleFonts.greatVibes(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/24.jpg',
+    'font': GoogleFonts.zeyada(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/25.jpg',
+    'font': GoogleFonts.aladin(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/26.jpg',
+    'font': GoogleFonts.kaushanScript(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/27.jpg',
+    'font': GoogleFonts.pathwayGothicOne(),
+  },
+  {
+    'bg': 'lib/assets/image/bgimage/28.jpg',
+    'font': GoogleFonts.sacramento(),
+  },
 ];
 
-List<TextStyle> goodTextStyle = [
-  GoogleFonts.abel(),
-  GoogleFonts.roboto(),
-  GoogleFonts.dancingScript(),
-  GoogleFonts.bitter(),
-  GoogleFonts.anton(),
-  GoogleFonts.yatraOne(),
-  GoogleFonts.pacifico(),
-  GoogleFonts.fjallaOne(),
-  GoogleFonts.shadowsIntoLight(),
-  GoogleFonts.indieFlower(),
-  GoogleFonts.zillaSlab(),
-  GoogleFonts.satisfy(),
-  GoogleFonts.permanentMarker(),
-  GoogleFonts.amaticSc(),
-  GoogleFonts.cinzel(),
-  GoogleFonts.sairaCondensed(),
-  GoogleFonts.kalam(),
-  GoogleFonts.courgette(),
-  GoogleFonts.righteous(),
-  GoogleFonts.tinos(),
-  GoogleFonts.lobster(),
-  GoogleFonts.changa(),
-  GoogleFonts.greatVibes(),
-  GoogleFonts.zeyada(),
-  GoogleFonts.aladin(),
-  GoogleFonts.kaushanScript(),
-  GoogleFonts.pathwayGothicOne(),
-  GoogleFonts.sacramento()
+List favoriteQuotes = [];
+
+List<Map<String, dynamic>> category = [
+  {
+    'bg': 'lib/assets/image/1.jpg',
+    'category': 'art',
+  },
+  {
+    'bg': 'lib/assets/image/2.jpeg',
+    'category': 'Attitude',
+  },
+  {
+    'bg': 'lib/assets/image/3.jpg',
+    'category': 'Business',
+  },
+  {
+    'bg': 'lib/assets/image/4.jpeg',
+    'category': 'Courage',
+  },
+  {
+    'bg': 'lib/assets/image/5.jpeg',
+    'category': 'Computer',
+  },
+  {
+    'bg': 'lib/assets/image/6.jpeg',
+    'category': 'Education',
+  },
 ];

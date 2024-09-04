@@ -1,4 +1,5 @@
 import 'package:quote_app/header_file.dart';
+import 'package:quote_app/views/screens/components/bgimage_Widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,10 +22,18 @@ class _HomePageState extends State<HomePage> {
     showDialog(
       context: context,
       builder: (context) => SimpleDialog(
-        title: const Text("😊 Quotes 😊 "),
+        title: const Text(
+          "Quotes",
+          style: TextStyle(fontSize: 24),
+        ),
         contentPadding: const EdgeInsets.all(16),
         children: [
-          Text(quoteModel.quote),
+          Text(
+            quoteModel.quote,
+            style: const TextStyle(
+              fontSize: 20,
+            ),
+          ),
         ],
       ),
     );
@@ -46,17 +55,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: const Color(0xff000000).withOpacity(0.4),
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('lib/assets/image/bg.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Container(
-              color: Colors.black.withOpacity(0.5),
-            ),
-          ),
+          bgImage(),
           Column(
             children: [
               Expanded(
@@ -65,30 +64,102 @@ class _HomePageState extends State<HomePage> {
                   child: PageView.builder(
                     scrollDirection: Axis.vertical,
                     itemCount: allQuotes.length,
-                    itemBuilder: (context, index) => Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "${allQuotes[index].quote}",
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
+                    itemBuilder: (context, index) => GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          Routes.detailpage,
+                          arguments: allQuotes[index],
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: s.height * 0.25,
                           ),
-                        ),
-                        SizedBox(
-                          height: s.height * 0.02,
-                        ),
-                        Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            "- ${allQuotes[index].author}",
+                          Text(
+                            allQuotes[index].quote,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
                             ),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            height: s.height * 0.02,
+                          ),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              "- ${allQuotes[index].author}",
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: s.height * 0.09,
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: GestureDetector(
+                                  onTap: () {
+                                    ShareExtend.share(
+                                      allQuotes[index].quote,
+                                      "text",
+                                    );
+                                  },
+                                  child: Container(
+                                    margin: const EdgeInsets.all(10),
+                                    child: const Icon(
+                                      Icons.share_rounded,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: IconButton(
+                                  onPressed: () {
+                                    favoriteQuotes.contains(allQuotes[index])
+                                        ? favoriteQuotes
+                                            .remove(allQuotes[index])
+                                        : favoriteQuotes.add(allQuotes[index]);
+                                    setState(() {});
+                                  },
+                                  icon: (favoriteQuotes
+                                          .contains(allQuotes[index]))
+                                      ? const Icon(
+                                          Icons.bookmark,
+                                          size: 30,
+                                          color: Colors.white,
+                                        )
+                                      : const Icon(
+                                          Icons.bookmark_border,
+                                          size: 30,
+                                          color: Colors.white,
+                                        ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  margin: const EdgeInsets.all(10),
+                                  child: const Icon(
+                                    Icons.save_alt_rounded,
+                                    color: Colors.white,
+                                    size: 30,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

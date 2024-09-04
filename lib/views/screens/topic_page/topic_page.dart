@@ -1,4 +1,5 @@
 import 'package:quote_app/header_file.dart';
+import 'package:quote_app/views/screens/components/bgimage_Widget.dart';
 
 class TopicPage extends StatefulWidget {
   const TopicPage({super.key});
@@ -14,17 +15,7 @@ class _TopicPageState extends State<TopicPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('lib/assets/image/bg.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Container(
-              color: Colors.black.withOpacity(0.5),
-            ),
-          ),
+          bgImage(),
           Column(
             children: [
               SizedBox(height: s.height * 0.15),
@@ -33,19 +24,25 @@ class _TopicPageState extends State<TopicPage> {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                   ),
-                  itemCount: allCategories.length,
+                  itemCount: category.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(
                           context,
                           Routes.category,
-                          arguments: allCategories[index],
+                          arguments: category[index],
                         );
                       },
                       child: Container(
                         margin: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              category[index]['bg'],
+                            ),
+                            fit: BoxFit.cover,
+                          ),
                           color: Colors.white.withOpacity(0.3),
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -53,10 +50,15 @@ class _TopicPageState extends State<TopicPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              allCategories[index],
+                              category[index]['category']
+                                  .toString()
+                                  .replaceFirst(
+                                    allCategories[index][0],
+                                    allCategories[index][0].toUpperCase(),
+                                  ),
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 20,
+                                fontSize: 28,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
