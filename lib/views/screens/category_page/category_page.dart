@@ -11,7 +11,9 @@ class CategoryPage extends StatefulWidget {
 class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
-    String quoteCategory = ModalRoute.of(context)!.settings.arguments as String;
+    Map<String, dynamic> args =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    String quoteCategory = args['category']; // Extract category from arguments
     List categoryList =
         allQuoteData.where((e) => e['category'] == quoteCategory).toList();
     Size s = MediaQuery.sizeOf(context);
@@ -29,9 +31,10 @@ class _CategoryPageState extends State<CategoryPage> {
                 ),
                 Text(
                   quoteCategory,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
                     fontSize: 50,
+                    fontFamily: selectedThemeFont,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -39,98 +42,91 @@ class _CategoryPageState extends State<CategoryPage> {
                   child: PageView.builder(
                     scrollDirection: Axis.vertical,
                     itemCount: categoryList.length,
-                    itemBuilder: (BuildContext context, int index) =>
-                        GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          Routes.detailpage,
-                          arguments: categoryList[index],
-                        );
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            categoryList[index]['quote'],
-                            style: const TextStyle(
+                    itemBuilder: (BuildContext context, int index) => Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          // allQuotes[index].quote,
+                          categoryList[index]['quote'],
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: selectedThemeFont,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          height: s.height * 0.02,
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            "- ${categoryList[index]['author']}",
+                            style: TextStyle(
                               color: Colors.white,
                               fontSize: 20,
+                              fontFamily: selectedThemeFont,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          SizedBox(
-                            height: s.height * 0.02,
-                          ),
-                          Align(
-                            alignment: Alignment.bottomRight,
-                            child: Text(
-                              "- ${categoryList[index]['author']}",
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
+                        ),
+                        SizedBox(
+                          height: s.height * 0.09,
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Expanded(
+                              child: IconButton(
+                                onPressed: () {
+                                  ShareExtend.share(
+                                    categoryList[index]['quote'],
+                                    "text",
+                                  );
+                                },
+                                icon: const Icon(
+                                  Icons.share,
+                                  size: 30,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: s.height * 0.09,
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Expanded(
-                                child: IconButton(
-                                  onPressed: () {
-                                    ShareExtend.share(
-                                      categoryList[index]['quote'],
-                                      "text",
-                                    );
-                                  },
-                                  icon: const Icon(
-                                    Icons.share,
-                                    size: 30,
-                                    color: Colors.white,
-                                  ),
+                            Expanded(
+                              child: IconButton(
+                                onPressed: () {
+                                  favoriteQuotes.contains(categoryList[index])
+                                      ? favoriteQuotes
+                                          .remove(categoryList[index])
+                                      : favoriteQuotes.add(categoryList[index]);
+                                  setState(() {});
+                                },
+                                icon: (favoriteQuotes
+                                        .contains(categoryList[index]))
+                                    ? const Icon(
+                                        Icons.bookmark,
+                                        size: 30,
+                                        color: Colors.white,
+                                      )
+                                    : const Icon(
+                                        Icons.bookmark_border,
+                                        size: 30,
+                                        color: Colors.white,
+                                      ),
+                              ),
+                            ),
+                            Expanded(
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.save_alt_rounded,
+                                  color: Colors.white,
+                                  size: 30,
                                 ),
                               ),
-                              Expanded(
-                                child: IconButton(
-                                  onPressed: () {
-                                    favoriteQuotes.contains(categoryList[index])
-                                        ? favoriteQuotes
-                                            .remove(categoryList[index])
-                                        : favoriteQuotes
-                                            .add(categoryList[index]);
-                                    setState(() {});
-                                  },
-                                  icon: (favoriteQuotes
-                                          .contains(categoryList[index]))
-                                      ? const Icon(
-                                          Icons.bookmark,
-                                          size: 30,
-                                          color: Colors.white,
-                                        )
-                                      : const Icon(
-                                          Icons.bookmark_border,
-                                          size: 30,
-                                          color: Colors.white,
-                                        ),
-                                ),
-                              ),
-                              Expanded(
-                                child: IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(
-                                      Icons.save_alt_rounded,
-                                      color: Colors.white,
-                                      size: 30,
-                                    )),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),

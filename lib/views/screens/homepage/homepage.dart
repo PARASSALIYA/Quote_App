@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:ui' as ui;
+
 import 'package:quote_app/header_file.dart';
 import 'package:quote_app/views/screens/components/bgimage_Widget.dart';
 
@@ -64,89 +67,89 @@ class _HomePageState extends State<HomePage> {
                   child: PageView.builder(
                     scrollDirection: Axis.vertical,
                     itemCount: allQuotes.length,
-                    itemBuilder: (context, index) => GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          Routes.detailpage,
-                          arguments: allQuotes[index],
-                        );
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: s.height * 0.25,
+                    itemBuilder: (context, index) => Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: s.height * 0.25,
+                        ),
+                        Text(
+                          allQuotes[index].quote,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: selectedThemeFont,
+                            fontSize: 20,
                           ),
-                          Text(
-                            allQuotes[index].quote,
-                            style: const TextStyle(
+                        ),
+                        SizedBox(
+                          height: s.height * 0.02,
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            "- ${allQuotes[index].author}",
+                            style: TextStyle(
+                              fontFamily: selectedThemeFont,
                               color: Colors.white,
                               fontSize: 20,
                             ),
                           ),
-                          SizedBox(
-                            height: s.height * 0.02,
-                          ),
-                          Align(
-                            alignment: Alignment.bottomRight,
-                            child: Text(
-                              "- ${allQuotes[index].author}",
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: s.height * 0.09,
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                child: GestureDetector(
-                                  onTap: () {
-                                    ShareExtend.share(
-                                      allQuotes[index].quote,
-                                      "text",
-                                    );
-                                  },
-                                  child: Container(
-                                    margin: const EdgeInsets.all(10),
-                                    child: const Icon(
-                                      Icons.share_rounded,
-                                      color: Colors.white,
-                                      size: 30,
-                                    ),
+                        ),
+                        SizedBox(
+                          height: s.height * 0.09,
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: GestureDetector(
+                                onTap: () {
+                                  ShareExtend.share(
+                                    allQuotes[index].quote,
+                                    "text",
+                                  ).then(
+                                    (value) {
+                                      setState(() {});
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  margin: const EdgeInsets.all(10),
+                                  child: const Icon(
+                                    Icons.share_rounded,
+                                    color: Colors.white,
+                                    size: 30,
                                   ),
                                 ),
                               ),
-                              Expanded(
-                                child: IconButton(
-                                  onPressed: () {
-                                    favoriteQuotes.contains(allQuotes[index])
-                                        ? favoriteQuotes
-                                            .remove(allQuotes[index])
-                                        : favoriteQuotes.add(allQuotes[index]);
-                                    setState(() {});
-                                  },
-                                  icon: (favoriteQuotes
-                                          .contains(allQuotes[index]))
-                                      ? const Icon(
-                                          Icons.bookmark,
-                                          size: 30,
-                                          color: Colors.white,
-                                        )
-                                      : const Icon(
-                                          Icons.bookmark_border,
-                                          size: 30,
-                                          color: Colors.white,
-                                        ),
-                                ),
+                            ),
+                            Expanded(
+                              child: IconButton(
+                                onPressed: () {
+                                  favoriteQuotes.contains(allQuotes[index])
+                                      ? favoriteQuotes.remove(allQuotes[index])
+                                      : favoriteQuotes.add(allQuotes[index]);
+                                  setState(() {});
+                                  Navigator.pop(context);
+                                },
+                                icon:
+                                    (favoriteQuotes.contains(allQuotes[index]))
+                                        ? const Icon(
+                                            Icons.bookmark,
+                                            size: 30,
+                                            color: Colors.white,
+                                          )
+                                        : const Icon(
+                                            Icons.bookmark_border,
+                                            size: 30,
+                                            color: Colors.white,
+                                          ),
                               ),
-                              Expanded(
+                            ),
+                            Expanded(
+                              child: GestureDetector(
+                                onTap: () {},
                                 child: Container(
                                   margin: const EdgeInsets.all(10),
                                   child: const Icon(
@@ -156,10 +159,10 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -171,7 +174,11 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, Routes.topicpage);
+                        Navigator.pushNamed(context, Routes.topicpage).then(
+                          (value) {
+                            setState(() {});
+                          },
+                        );
                       },
                       child: Container(
                         height: 40,
@@ -193,7 +200,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, Routes.theme);
+                        Navigator.pushNamed(context, Routes.theme).then(
+                          (value) {
+                            setState(() {});
+                          },
+                        );
                       },
                       child: Container(
                         height: 40,

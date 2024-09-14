@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quote_app/utils/model.dart';
 
@@ -361,199 +361,173 @@ List<QuoteModel> allQuotes =
 
 List allCategories = allQuotes.map((e) => e.category).toSet().toList();
 
-//Colors 49
-List<Color> color = [
-  const Color(0xffD8BFD8),
-  const Color(0xffE0FFFF),
-  const Color(0xffFFFFFF),
-  const Color(0xffE6E6FA),
-  const Color(0xffD8BFD8),
-  const Color(0xffE3B7A0),
-  const Color(0xffFF6666),
-  const Color(0xffFF8989),
-  const Color(0xffFCAEAE),
-  const Color(0xffFFEADD),
-  const Color(0xffA78295),
-  const Color(0xff73777B),
-  const Color(0xff826F66),
-  const Color(0xff99627A),
-  const Color(0xff867070),
-  const Color(0xff9E7676),
-  const Color(0xffBB9981),
-  const Color(0xffD8BFD8),
-  const Color(0xffE0FFFF),
-  const Color(0xffB0E0E6),
-  const Color(0xff87CEFA),
-  const Color(0xff87CEEB),
-  const Color(0xff6B728E),
-  const Color(0xffC1A3A3),
-  const Color(0xff845460),
-  const Color(0xffF3C5C5),
-  const Color(0xffD8BFD8),
-  const Color(0xffE0FFFF),
-  const Color(0xffB0E0E6),
-  const Color(0xff87CEFA),
-  const Color(0xff87CEEB),
-  const Color(0xff00BFFF),
-  const Color(0xffADD8E6),
-  const Color(0xffB0C4DE),
-  const Color(0xff4169E1),
-  const Color(0xff6495ED),
-  const Color(0xff4682B4),
-  const Color(0xff00CED1),
-  const Color(0xff1E90FF),
-  const Color(0xff00BFFF),
-  const Color(0xff87CEFA),
-  const Color(0xff87CEEB),
-  const Color(0xff00BFFF),
-  const Color(0xffADD8E6),
-  const Color(0xffB0C4DE),
-  const Color(0xff4169E1),
-  const Color(0xff6495ED),
-  const Color(0xff4682B4),
-  const Color(0xff00CED1),
-];
-// Fonts 27
 List<Map<String, dynamic>> fontBg = [
   {
-    'bg': 'lib/assets/image/bgimage/1.jpeg',
+    'bg': 'assets/image/bgimage/1.jpeg',
     'font': GoogleFonts.abel(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/2.jpeg',
+    'bg': 'assets/image/bgimage/2.jpeg',
     'font': GoogleFonts.roboto(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/3.jpg',
+    'bg': 'assets/image/bgimage/3.jpg',
     'font': GoogleFonts.dancingScript(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/4.jpeg',
+    'bg': 'assets/image/bgimage/4.jpeg',
     'font': GoogleFonts.bitter(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/5.jpeg',
+    'bg': 'assets/image/bgimage/5.jpeg',
     'font': GoogleFonts.anton(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/6.webp',
+    'bg': 'assets/image/bgimage/6.webp',
     'font': GoogleFonts.yatraOne(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/7.jpeg',
+    'bg': 'assets/image/bgimage/7.jpeg',
     'font': GoogleFonts.pacifico(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/8.webp',
+    'bg': 'assets/image/bgimage/8.webp',
     'font': GoogleFonts.fjallaOne(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/9.jpeg',
+    'bg': 'assets/image/bgimage/9.jpeg',
     'font': GoogleFonts.shadowsIntoLight(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/10.jpeg',
+    'bg': 'assets/image/bgimage/10.jpeg',
     'font': GoogleFonts.indieFlower(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/11.jpeg',
+    'bg': 'assets/image/bgimage/11.jpeg',
     'font': GoogleFonts.zillaSlab(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/12.webp',
+    'bg': 'assets/image/bgimage/12.webp',
     'font': GoogleFonts.satisfy(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/13.jpg',
+    'bg': 'assets/image/bgimage/13.jpg',
     'font': GoogleFonts.permanentMarker(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/14.jpg',
+    'bg': 'assets/image/bgimage/14.jpg',
     'font': GoogleFonts.amaticSc(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/15.jpg',
+    'bg': 'assets/image/bgimage/15.jpg',
     'font': GoogleFonts.cinzel(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/16.jpg',
+    'bg': 'assets/image/bgimage/16.jpg',
     'font': GoogleFonts.sairaCondensed(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/17.jpg',
+    'bg': 'assets/image/bgimage/17.jpg',
     'font': GoogleFonts.kalam(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/18.jpg',
+    'bg': 'assets/image/bgimage/18.jpg',
     'font': GoogleFonts.courgette(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/19.jpg',
+    'bg': 'assets/image/bgimage/19.jpg',
     'font': GoogleFonts.righteous(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/20.jpg',
+    'bg': 'assets/image/bgimage/20.jpg',
     'font': GoogleFonts.tinos(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/21.jpg',
+    'bg': 'assets/image/bgimage/21.jpg',
     'font': GoogleFonts.lobster(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/22.jpg',
+    'bg': 'assets/image/bgimage/22.jpg',
     'font': GoogleFonts.changa(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/23.jpg',
+    'bg': 'assets/image/bgimage/23.jpg',
     'font': GoogleFonts.greatVibes(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/24.jpg',
+    'bg': 'assets/image/bgimage/24.jpg',
     'font': GoogleFonts.zeyada(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/25.jpg',
+    'bg': 'assets/image/bgimage/25.jpg',
     'font': GoogleFonts.aladin(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/26.jpg',
+    'bg': 'assets/image/bgimage/26.jpg',
     'font': GoogleFonts.kaushanScript(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/27.jpg',
+    'bg': 'assets/image/bgimage/27.jpg',
     'font': GoogleFonts.pathwayGothicOne(),
   },
   {
-    'bg': 'lib/assets/image/bgimage/28.jpg',
+    'bg': 'assets/image/bgimage/28.jpg',
     'font': GoogleFonts.sacramento(),
   },
 ];
 
-List favoriteQuotes = [];
-
 List<Map<String, dynamic>> category = [
   {
-    'bg': 'lib/assets/image/1.jpg',
+    'bg': 'assets/image/1.jpg',
     'category': 'art',
   },
   {
-    'bg': 'lib/assets/image/2.jpeg',
-    'category': 'Attitude',
+    'bg': 'assets/image/2.jpeg',
+    'category': 'attitude',
   },
   {
-    'bg': 'lib/assets/image/3.jpg',
-    'category': 'Business',
+    'bg': 'assets/image/3.jpg',
+    'category': 'business',
   },
   {
-    'bg': 'lib/assets/image/4.jpeg',
-    'category': 'Courage',
+    'bg': 'assets/image/4.jpeg',
+    'category': 'courage',
   },
   {
-    'bg': 'lib/assets/image/5.jpeg',
-    'category': 'Computer',
+    'bg': 'assets/image/5.jpeg',
+    'category': 'computers',
   },
   {
-    'bg': 'lib/assets/image/6.jpeg',
-    'category': 'Education',
+    'bg': 'assets/image/6.jpeg',
+    'category': 'education',
   },
 ];
+
+var selectedTheme = fontBg[0]['bg'];
+String selectedThemeFont = fontBg[0]['font'].fontFamily!;
+List favoriteQuotes = [];
+
+// Fonts 27// //Colors 49
+// // List<Color> color = [
+// //   const Color(0xffD8BFD8),
+// //   const Color(0xffE0FFFF),
+// //   const Color(0xffFFFFFF),
+// //   const Color(0xffE6E6FA),
+// //   const Color(0xffD8BFD8),
+// //   const Color(0xffE3B7A0),
+// //   const Color(0xffFF6666),
+// //   const Color(0xffFF8989),
+// //   const Color(0xffFCAEAE),
+// //   const Color(0xffFFEADD),
+// //   const Color(0xffA78295),
+// //   const Color(0xff73777B),
+// //   const Color(0xff826F66),
+// //   const Color(0xff99627A),
+// //   const Color(0xff867070),
+// //   const Color(0xff9E7676),
+// //   const Color(0xffBB9981),
+// //   const Color(0xffD8BFD8),
+// //   const Color(0xffE0FFFF),
+// // ];
+//
+// // Fonts 27
