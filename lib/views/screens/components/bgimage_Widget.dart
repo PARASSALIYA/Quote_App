@@ -2,9 +2,9 @@ import 'package:quote_app/header_file.dart';
 
 Widget bgImage() {
   return Container(
-    decoration: const BoxDecoration(
+    decoration: BoxDecoration(
       image: DecorationImage(
-        image: AssetImage('lib/assets/image/bg.jpg'),
+        image: AssetImage(selectedTheme),
         fit: BoxFit.cover,
       ),
     ),

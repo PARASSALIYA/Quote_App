@@ -1,5 +1,4 @@
 import 'package:quote_app/header_file.dart';
-import 'package:quote_app/views/screens/components/bgimage_Widget.dart';
 
 class TopicPage extends StatefulWidget {
   const TopicPage({super.key});
@@ -46,23 +45,28 @@ class _TopicPageState extends State<TopicPage> {
                           color: Colors.white.withOpacity(0.3),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              category[index]['category']
-                                  .toString()
-                                  .replaceFirst(
-                                    allCategories[index][0],
-                                    allCategories[index][0].toUpperCase(),
-                                  ),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 28,
-                                fontWeight: FontWeight.bold,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.4),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                category[index]['category']
+                                    .toString()
+                                    .replaceFirst(
+                                      allCategories[index][0],
+                                      allCategories[index][0].toUpperCase(),
+                                    ),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     );

@@ -12,9 +12,6 @@ class QuoteApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Queue App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       routes: routes,
     );
   }

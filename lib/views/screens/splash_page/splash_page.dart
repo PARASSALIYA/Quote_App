@@ -28,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('lib/assets/image/bg.jpg'),
+            image: AssetImage('assets/image/bg.jpg'),
             fit: BoxFit.cover,
           ),
         ),
