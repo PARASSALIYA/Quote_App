@@ -1,3 +1,4 @@
+import 'dart:core';
 import 'package:quote_app/header_file.dart';
 
 class CategoryPage extends StatefulWidget {

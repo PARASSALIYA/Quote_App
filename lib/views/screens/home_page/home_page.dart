@@ -1,6 +1,3 @@
-import 'dart:io';
-import 'dart:ui' as ui;
-
 import 'package:quote_app/header_file.dart';
 
 class HomePage extends StatefulWidget {
@@ -130,10 +127,6 @@ class _HomePageState extends State<HomePage> {
                                       ? favoriteQuotes.remove(allQuotes[index])
                                       : favoriteQuotes.add(allQuotes[index]);
                                   setState(() {});
-<<<<<<< HEAD:lib/views/screens/home_page/home_page.dart
-=======
-                                  Navigator.pop(context);
->>>>>>> origin/master:lib/views/screens/homepage/homepage.dart
                                 },
                                 icon:
                                     (favoriteQuotes.contains(allQuotes[index]))
@@ -176,16 +169,8 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     GestureDetector(
                       onTap: () {
-<<<<<<< HEAD:lib/views/screens/home_page/home_page.dart
                         Navigator.pushNamed(context, Routes.topic)
                             .then((value) => setState(() {}));
-=======
-                        Navigator.pushNamed(context, Routes.topicpage).then(
-                          (value) {
-                            setState(() {});
-                          },
-                        );
->>>>>>> origin/master:lib/views/screens/homepage/homepage.dart
                       },
                       child: Container(
                         height: 40,
@@ -207,16 +192,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-<<<<<<< HEAD:lib/views/screens/home_page/home_page.dart
                         Navigator.pushNamed(context, Routes.theme)
                             .then((value) => setState(() {}));
-=======
-                        Navigator.pushNamed(context, Routes.theme).then(
-                          (value) {
-                            setState(() {});
-                          },
-                        );
->>>>>>> origin/master:lib/views/screens/homepage/homepage.dart
                       },
                       child: Container(
                         height: 40,
