@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import 'package:quote_app/header_file.dart';
+=======
+import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:quote_app/utils/model.dart';
+>>>>>>> origin/master
 
 List<Map<String, dynamic>> allQuoteData = [
   {
