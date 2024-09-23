@@ -506,26 +506,5 @@ String selectedThemeFont = fontBg[0]['font'].fontFamily!;
 List favoriteQuotes = [];
 
 // Fonts 27// //Colors 49
-// // List<Color> color = [
-// //   const Color(0xffD8BFD8),
-// //   const Color(0xffE0FFFF),
-// //   const Color(0xffFFFFFF),
-// //   const Color(0xffE6E6FA),
-// //   const Color(0xffD8BFD8),
-// //   const Color(0xffE3B7A0),
-// //   const Color(0xffFF6666),
-// //   const Color(0xffFF8989),
-// //   const Color(0xffFCAEAE),
-// //   const Color(0xffFFEADD),
-// //   const Color(0xffA78295),
-// //   const Color(0xff73777B),
-// //   const Color(0xff826F66),
-// //   const Color(0xff99627A),
-// //   const Color(0xff867070),
-// //   const Color(0xff9E7676),
-// //   const Color(0xffBB9981),
-// //   const Color(0xffD8BFD8),
-// //   const Color(0xffE0FFFF),
-// // ];
-//
+
 // // Fonts 27

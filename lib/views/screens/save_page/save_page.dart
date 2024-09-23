@@ -11,6 +11,26 @@ class _SavePageState extends State<SavePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.white,
+          ),
+        ),
+        title: const Text(
+          "Bookmarks",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+      ),
       body: Stack(
         children: [
           bgImage(),
@@ -49,24 +69,15 @@ class _SavePageState extends State<SavePage> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: IconButton(
-                          onPressed: () {
-                            favoriteQuotes.contains(allQuotes[index])
-                                ? favoriteQuotes.remove(allQuotes[index])
-                                : favoriteQuotes.add(allQuotes[index]);
-                            setState(() {});
-                          },
-                          icon: (favoriteQuotes.contains(allQuotes[index]))
-                              ? const Icon(
-                                  Icons.bookmark,
-                                  size: 30,
-                                  color: Colors.white,
-                                )
-                              : const Icon(
-                                  Icons.bookmark_border,
-                                  size: 30,
-                                  color: Colors.white,
-                                ),
-                        ),
+                            onPressed: () {
+                              favoriteQuotes.remove(favoriteQuotes[index]);
+                              setState(() {});
+                            },
+                            icon: const Icon(
+                              Icons.bookmark,
+                              size: 30,
+                              color: Colors.white,
+                            )),
                       ),
                     ],
                   ),

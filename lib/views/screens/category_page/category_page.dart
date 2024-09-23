@@ -31,10 +31,9 @@ class _CategoryPageState extends State<CategoryPage> {
                 ),
                 Text(
                   quoteCategory,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 50,
-                    fontFamily: selectedThemeFont,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
